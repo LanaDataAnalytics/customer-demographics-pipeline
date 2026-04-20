@@ -1,4 +1,4 @@
-# EDA [Customer demographics pipeline]
+# EDA [Customer demographics]
 End-to-end SQL pipeline and EDA dashboard for customer demographics
 
 ## Project Objective
