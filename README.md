@@ -5,8 +5,8 @@ End-to-end SQL pipeline and EDA dashboard for customer demographics
 Engineered a secure, multi-tier SQL data pipeline to ingest, clean, and standardize 50,000+ raw demographic records, establishing a Single Source of Truth (SSOT) to power regional Exploratory Data Analysis (EDA) and VIP segmentation in Power BI and Tableau.
 
 ## Tech Stack
-* **Database & Transformation:** SQL (BigQuery/PostgreSQL)
-* **Visualization:** Tableau, Power BI
+* **Database & Transformation:** SQL (BigQuery)
+* **Visualization:** Power BI
 * **Techniques:** PII Cryptographic Hashing, Window Functions, Geospatial Validation, Anomaly Detection
 
 ## Pipeline Architecture
@@ -15,12 +15,16 @@ Engineered a secure, multi-tier SQL data pipeline to ingest, clean, and standard
 3. **Data Mart (Business Logic):** Engineered custom categories utilizing robust `CASE WHEN` bounding logic (`>=`, `<=`) to segment VIPs and isolate data quality anomalies (e.g., Title/Gender mismatch detection).
 4. **BI & Analytics Layer:** Replaced computationally expensive `JOIN` operations with set-based Window Functions (`OVER(PARTITION BY)`) to calculate regional part-to-whole percentages in a single database pass before exporting to BI tools.
 
-## Dashboard Previews
-*(Insert your high-res screenshots here)*
-![Global VIP Map](./dashboards/Global_VIP_Map.png)
-![Demographic Target Matrix](./dashboards/Target_Matrix.png)
+## 📈 Dashboard Previews
+*(Geographic and demographic distribution in Poland)*
 
-## Code Highlights
-Feel free to explore the `/sql_pipeline` folder to see the underlying architecture:
-* [Staging & Anonymization](./sql_pipeline/01_staging_and_anonymization.sql)
-* [Data Quality Auditing](./sql_pipeline/03_data_quality_audit.sql)
+![Global VIP Map - Poland](./dashboards/Global_VIP_Map_Poland.png)
+![Demographic Target Matrix - Poland](./dashboards/Target_Matrix_Poland.png)
+
+## 💻 Code Architecture
+Feel free to explore the `/sql_pipeline` folder to see the step-by-step SQL logic:
+* [1. Staging Layer (Cleaning & Hashing)](./sql_pipeline/01_staging_layer.sql)
+* [2. Data Mart Logic (Feature Engineering)](./sql_pipeline/02_data_mart_logic.sql)
+* [3. Data Quality Audit (Subqueries)](./sql_pipeline/03_data_quality_audit.sql)
+* [4. Demographic Percentages (Window Functions)](./sql_pipeline/04_demographic_percentages.sql)
+* [5. Target Markets EDA (Aggregations)](./sql_pipeline/05_target_markets_eda.sql)
