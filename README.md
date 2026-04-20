@@ -2,7 +2,7 @@
 End-to-end SQL pipeline and EDA dashboard for customer demographics
 
 ## Project Objective
-Engineered a secure, multi-tier SQL data pipeline to ingest, clean, and standardize 50,000+ raw demographic records, establishing a Single Source of Truth (SSOT) to power regional Exploratory Data Analysis (EDA) and VIP segmentation in Power BI and Tableau.
+Engineered a secure, multi-tier SQL data pipeline to ingest, clean, and standardize 50,000+ raw demographic records, establishing a clean, centralized foundation for a regional Exploratory Data Analysis (EDA) and demographic segmentation in Power BI.
 
 ## Tech Stack
 * **Database & Transformation:** SQL (BigQuery)
